@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://alexshestakov.com/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://alexshestakov.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://alexshestakov.com/">
+      <s:element name="PostBase64EncodedJpegImage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="base46EncodedJpegImage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PostBase64EncodedJpegImageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PostBase64EncodedJpegImageResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="PostBase64EncodedJpegImageSoapIn">
+    <wsdl:part name="parameters" element="tns:PostBase64EncodedJpegImage" />
+  </wsdl:message>
+  <wsdl:message name="PostBase64EncodedJpegImageSoapOut">
+    <wsdl:part name="parameters" element="tns:PostBase64EncodedJpegImageResponse" />
+  </wsdl:message>
+  <wsdl:portType name="JetFlyServiceSoap">
+    <wsdl:operation name="PostBase64EncodedJpegImage">
+      <wsdl:input message="tns:PostBase64EncodedJpegImageSoapIn" />
+      <wsdl:output message="tns:PostBase64EncodedJpegImageSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="JetFlyServiceSoap" type="tns:JetFlyServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="PostBase64EncodedJpegImage">
+      <soap:operation soapAction="http://alexshestakov.com/PostBase64EncodedJpegImage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="JetFlyServiceSoap12" type="tns:JetFlyServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="PostBase64EncodedJpegImage">
+      <soap12:operation soapAction="http://alexshestakov.com/PostBase64EncodedJpegImage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="JetFlyService">
+    <wsdl:port name="JetFlyServiceSoap" binding="tns:JetFlyServiceSoap">
+      <soap:address location="http://localhost:59828/JetFlyService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="JetFlyServiceSoap12" binding="tns:JetFlyServiceSoap12">
+      <soap12:address location="http://localhost:59828/JetFlyService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

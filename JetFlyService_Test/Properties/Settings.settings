@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="JetFlyService_Test.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="JetFlyService_Test_TestedService_JetFlyService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:59828/JetFlyService.asmx</Value>
+    </Setting>
+    <Setting Name="JetFlyService_Test_RealService_JetFlyService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://alexshestakov.com/JetFly/JetFlyService.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
