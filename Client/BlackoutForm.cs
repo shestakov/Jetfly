@@ -36,14 +36,14 @@ namespace JetFly
 			}
 			if (e.Button != MouseButtons.Left) return;
 			graphics.Clear(backgroundColor);
-			pointClick = PointToClient(new Point(MousePosition.X, MousePosition.Y));
+			pointClick = PointToScreen(new Point(MousePosition.X, MousePosition.Y));
 		}
 
 		private void OnMouseUp(object sender, MouseEventArgs e)
 		{
 			if (e.Button != MouseButtons.Left) return;
 			Hide();
-			if (pointClick == PointToClient(new Point(MousePosition.X, MousePosition.Y)))
+			if (pointClick == PointToScreen(new Point(MousePosition.X, MousePosition.Y)))
 				selectionRect = new Rectangle(0, 0, Width, Height);
 			TakeScreenshot(RectangleToScreen(selectionRect));
 			ScreenAreaPicked(sender, e);
@@ -59,7 +59,7 @@ namespace JetFly
 			var leftTop =Point.Empty;
 
 
-			var position = PointToClient(Cursor.Position);
+			var position = PointToScreen(Cursor.Position);
 
 			if (position.X < pointClick.X)
 			{
